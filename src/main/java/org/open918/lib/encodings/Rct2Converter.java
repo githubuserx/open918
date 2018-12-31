@@ -57,7 +57,13 @@ public class Rct2Converter extends TicketConverter {
         }
 
         for (TicketField f : fields) {
-            addField(lines, f.getLine(), f.getColumn(), f.getText(), f.getLength());
+            int line = f.getLine();
+
+            // according to the standard (only) LF (line feed) may occur in field body
+            for (String text : f.getText().split("\n")) {
+                addField(lines, line, f.getColumn(), text);
+                line++;
+            }
         }
 
         return lines.toString();
