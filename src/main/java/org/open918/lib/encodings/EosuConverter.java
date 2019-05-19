@@ -3,6 +3,7 @@ package org.open918.lib.encodings;
 import org.open918.lib.domain.GenericTicketDetails;
 import org.open918.lib.domain.TicketField;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -50,7 +51,7 @@ public class EosuConverter extends TicketConverter {
         return ticket;
     }
 
-    private static class TicketFieldLineComparator implements Comparator<TicketField> {
+    private static class TicketFieldLineComparator implements Comparator<TicketField>, Serializable {
         @Override
         public int compare(TicketField o1, TicketField o2) {
             return o1.getLine() - o2.getLine();
