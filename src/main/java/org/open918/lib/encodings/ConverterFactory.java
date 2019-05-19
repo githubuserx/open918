@@ -10,10 +10,13 @@ import java.util.List;
 public class ConverterFactory {
 
     public static TicketConverter getInstance(String standard, List<TicketField> fields) {
-        switch(standard) {
-            case "RCT2": return new Rct2Converter(fields);
-            case "EOSU": return new EosuConverter(fields);
-            default: throw new IllegalArgumentException("Unknown standard");
+        switch (standard) {
+            case "RCT2":
+                return new Rct2Converter(fields);
+            case "EOSU":
+                return new EosuConverter(fields);
+            default:
+                throw new IllegalArgumentException("Unknown standard");
         }
     }
 }
