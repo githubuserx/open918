@@ -103,17 +103,17 @@ public class UicTicketParser {
         return offset+47;
     }
 
-    static int parseFields(Ticket s, String body, int offset) throws ParseException {
-        s.getContents().setVersion(getInteger(body, offset, 0, 2));
-        s.getContents().setLength(getInteger(body, offset, 2, 6));
-        s.getContents().setStandard(getString(body, offset, 6, 10));
+    private static int parseFields(Ticket s, String body, int offset) {
+        s.getContent().setVersion(getInteger(body, offset, 0, 2));
+        s.getContent().setLength(getInteger(body, offset, 2, 6));
+        s.getContent().setLayout(getString(body, offset, 6, 10));
 
-        s.getContents().setNumberOfFields(getInteger(body, offset, 10, 14));
+        s.getContent().setNumberOfFields(getInteger(body, offset, 10, 14));
 
         offset += 14;
         // TODO: This could be read as a stream, meaning not trusting "numberOfFields"
         // TODO: Number of Fields could be wrong, while length is right
-        for (int i = 0; i < s.getContents().getNumberOfFields(); i++) {
+        for (int i = 0; i < s.getContent().getNumberOfFields(); i++) {
             System.out.println("Reading field "+i);
             if (body.substring(offset).contentEquals("")) {
                 // TODO: Log - this actually might be an illegal ticket as number of fields is too big
@@ -144,7 +144,7 @@ public class UicTicketParser {
             offset += f.getLength();
 
 
-            s.getContents().getFields().add(f);
+            s.getContent().getFields().add(f);
         }
 
         return offset;

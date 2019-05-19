@@ -6,18 +6,18 @@ import java.util.List;
 /**
  * Created by Joel Haasnoot on 26/04/15.
  */
-public class TicketContents extends TicketBlock {
+public class TicketContent extends TicketBlock {
 
-    private String standard;
+    private String layout;
     private int numberOfFields;
     private List<TicketField> fields = new ArrayList<>();
 
-    public String getStandard() {
-        return standard;
+    public String getLayout() {
+        return layout;
     }
 
-    public void setStandard(String standard) {
-        this.standard = standard;
+    public void setLayout(String layout) {
+        this.layout = layout;
     }
 
     public int getNumberOfFields() {

@@ -9,8 +9,8 @@ public class TicketField {
     private int column;
     private int height;
     private int width;
-    private Rct2Format formatting;
     private int length;
+    private Rct2Format formatting;
     private String text;
 
     public int getLine() {
@@ -67,5 +67,10 @@ public class TicketField {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    @Override
+    public String toString() {
+        return text;
     }
 }

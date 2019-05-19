@@ -8,12 +8,12 @@ import java.util.EnumSet;
  */
 public class TicketHeader extends TicketBlock {
 
-    String language;
-    String language2;
-    long creationDate;
-    int carrier;
-    String orderNumber;
-    EnumSet<TicketFlag> flags;
+    private int carrier;
+    private long creationDate;
+    private String orderNumber;
+    private String language;
+    private String language2;
+    private EnumSet<TicketFlag> flags;
 
     public String getLanguage() {
         return language;

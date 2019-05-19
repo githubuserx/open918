@@ -27,7 +27,7 @@ public class Rct2ConverterTest {
                 "w4jDlkjDn8KIbnzCiX9BE34q";
 
         Ticket s = TicketUtils.getTicket(ticket);
-        Rct2Converter converter = new Rct2Converter(s.getContents().getFields());
+        Rct2Converter converter = new Rct2Converter(s.getContent().getFields());
         GenericTicketDetails details = converter.toDetails();
         assertEquals("Vervoerbewijs Enkel", details.getTicketTitle());
         assertEquals("VALID FROM 01/09/2016 TO 01/09/2016", details.getValidity());
@@ -56,7 +56,7 @@ public class Rct2ConverterTest {
                 "UcOZwr08w7bDq3PDgFNkw69ow4TCicOYJ18jBMKEXQ==";
 
         Ticket s = TicketUtils.getTicket(ticket);
-        Rct2Converter converter = new Rct2Converter(s.getContents().getFields());
+        Rct2Converter converter = new Rct2Converter(s.getContent().getFields());
         GenericTicketDetails details = converter.toDetails();
         assertEquals("VERVOERBEWIJS", details.getTicketTitle());
         assertEquals("Geldig:01.12.2016 - 01.12.2016", details.getValidity());
@@ -83,7 +83,7 @@ public class Rct2ConverterTest {
                 "HnnCvUZlwoPCv8K7bMOuwpl7DRxCJ3EzccOzJDx1R8OUIyFHQ30XwrrDqcK1w74BPjp+Jw==";
 
         Ticket s = TicketUtils.getTicket(ticket);
-        Rct2Converter converter = new Rct2Converter(s.getContents().getFields());
+        Rct2Converter converter = new Rct2Converter(s.getContent().getFields());
         GenericTicketDetails details = converter.toDetails();
         assertEquals("Vervoerbewijs Enkel", details.getTicketTitle());
         assertEquals("VALID FROM 21/04/2018 TO 21/04/2018", details.getValidity());
@@ -110,7 +110,7 @@ public class Rct2ConverterTest {
                 "sixDfsOXwqnDrD/DvgBSwr14w5s=";
 
         Ticket s = TicketUtils.getTicket(ticket);
-        Rct2Converter converter = new Rct2Converter(s.getContents().getFields());
+        Rct2Converter converter = new Rct2Converter(s.getContent().getFields());
         GenericTicketDetails details = converter.toDetails();
         assertEquals("Vervoerbewijs Dagkaart", details.getTicketTitle());
         assertEquals("VALID FROM 21/04/2018 TO 21/04/2018", details.getValidity());
@@ -138,7 +138,7 @@ public class Rct2ConverterTest {
                 "OcKvfEA=";
 
         Ticket s = TicketUtils.getTicket(ticket);
-        Rct2Converter converter = new Rct2Converter(s.getContents().getFields());
+        Rct2Converter converter = new Rct2Converter(s.getContent().getFields());
         GenericTicketDetails details = converter.toDetails();
         assertEquals("Enkele reis", details.getTicketTitle());
         assertEquals("VALID FROM 21/04/2018 TO 21/04/2018", details.getValidity());
@@ -164,7 +164,7 @@ public class Rct2ConverterTest {
                 "ScO9";
 
         Ticket s = TicketUtils.getTicket(ticket);
-        Rct2Converter converter = new Rct2Converter(s.getContents().getFields());
+        Rct2Converter converter = new Rct2Converter(s.getContent().getFields());
         GenericTicketDetails details = converter.toDetails();
         assertEquals("Arnhem Centraal - Arnhem Velperpoort", details.getTicketTitle());
         assertEquals("", details.getValidity());

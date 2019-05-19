@@ -15,7 +15,7 @@ public class Ticket {
     private byte[] message;
 
     private TicketHeader header = new TicketHeader();
-    private TicketContents contents = new TicketContents();
+    private TicketContent content = new TicketContent();
 
     private List<TicketBlock> blocks = new ArrayList<>();
 
@@ -91,12 +91,12 @@ public class Ticket {
         this.header = header;
     }
 
-    public TicketContents getContents() {
-        return contents;
+    public TicketContent getContent() {
+        return content;
     }
 
-    public void setContents(TicketContents contents) {
-        this.contents = contents;
+    public void setContent(TicketContent content) {
+        this.content = content;
     }
 
     public List<TicketBlock> getBlocks() {
