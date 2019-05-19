@@ -9,7 +9,7 @@ public class TicketBlock {
     private String type;
     private int version;
     private int length;
-    String body;
+    private String body;
 
     public String getType() {
         return type;

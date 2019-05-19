@@ -19,14 +19,14 @@ public class UicTicketParser {
 
 
     private final static SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyyHHmm");
-    public static final int TICKET_BLOCK_NAME_LENGTH = 6;
-    public static final List<String> MESSAGE_TYPES = Arrays.asList("#UT", "OTI");
+    private static final int TICKET_BLOCK_NAME_LENGTH = 6;
+    private static final List<String> MESSAGE_TYPES = Arrays.asList("#UT", "OTI");
 
     public static Ticket decode(String contents, boolean isZxing) throws DataFormatException, ParseException {
         return decode(contents.getBytes(), isZxing);
     }
 
-    public static Ticket decode(byte[] data, boolean isZxing) throws DataFormatException, ParseException {
+    private static Ticket decode(byte[] data, boolean isZxing) throws DataFormatException, ParseException {
         if (isZxing) {
             data = ZxingUtil.cleanupZXingData(data);
         }

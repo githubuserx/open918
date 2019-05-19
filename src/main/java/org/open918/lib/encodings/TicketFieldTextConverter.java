@@ -6,5 +6,5 @@ package org.open918.lib.encodings;
  */
 public interface TicketFieldTextConverter {
 
-    public String toText();
+    String toText();
 }
